@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:py-24">
       <span className="mx-auto mb-5 inline-block rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-medium text-slate-500 shadow-sm">
-        Group study, reimagined
+        Find your people. Focus your learning.
       </span>
 
       <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-800 sm:text-5xl">

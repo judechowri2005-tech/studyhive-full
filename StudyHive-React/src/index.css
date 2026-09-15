@@ -1,7 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #23343a;
+  background: #f7f4ed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #f8fafc;
+  min-width: 320px;
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(245, 185, 66, 0.16), transparent 26rem),
+    radial-gradient(circle at 90% 18%, rgba(50, 142, 118, 0.12), transparent 24rem),
+    #f7f4ed;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #f5c96d;
+  color: #23343a;
 }

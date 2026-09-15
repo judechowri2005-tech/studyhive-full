@@ -1,2 +1,332 @@
-/* Styling is handled with Tailwind utility classes throughout the app.
-   This file is kept only because App.jsx imports it. */
+:root {
+   --ink: #23343a;
+   --muted: #718085;
+   --paper: rgba(255, 253, 248, 0.9);
+   --line: rgba(35, 52, 58, 0.12);
+   --honey: #e6a92e;
+   --honey-light: #fff0c9;
+   --teal: #25836d;
+   --teal-dark: #176451;
+   --coral: #d9674d;
+   --shadow: 0 18px 45px rgba(45, 57, 48, 0.08);
+}
+
+.min-h-screen.bg-slate-50 {
+   min-height: 100vh;
+   background: transparent;
+}
+
+h1,
+h2,
+h3,
+h4 {
+   font-family: "Space Grotesk", sans-serif;
+   letter-spacing: -0.02em;
+}
+
+header.sticky {
+   border-color: var(--line);
+   background: rgba(247, 244, 237, 0.82);
+   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+header nav {
+   max-width: 72rem;
+   min-height: 4.5rem;
+}
+
+header nav > a:first-child > span:first-child {
+   position: relative;
+   height: 2.55rem;
+   width: 2.55rem;
+   border-radius: 0.85rem;
+   background: var(--ink);
+   box-shadow: 4px 4px 0 var(--honey);
+   font-family: "Space Grotesk", sans-serif;
+   letter-spacing: -0.08em;
+}
+
+header nav > a:first-child > span:first-child::after {
+   position: absolute;
+   right: -0.22rem;
+   top: -0.22rem;
+   height: 0.5rem;
+   width: 0.5rem;
+   border-radius: 999px;
+   background: var(--honey);
+   content: "";
+}
+
+header nav > a:first-child > span:last-child {
+   color: var(--ink);
+   font-family: "Space Grotesk", sans-serif;
+   letter-spacing: -0.04em;
+}
+
+header nav > div a,
+header nav > div button {
+   transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+header nav > div a:hover,
+header nav > div button:hover {
+   background: var(--honey-light);
+   color: var(--ink);
+   transform: translateY(-1px);
+}
+
+header nav > div a:last-child,
+header nav > div button {
+   background: var(--ink);
+   color: #fffdf8;
+}
+
+header nav > div a:last-child:hover,
+header nav > div button:hover {
+   background: var(--teal-dark);
+   color: #fffdf8;
+}
+
+main,
+body > #root > div > div {
+   animation: reveal 500ms ease both;
+}
+
+/* Shared panel treatment keeps every route in the same visual hive. */
+.rounded-xl.border.bg-white,
+.rounded-xl.border.bg-white\/80 {
+   border-color: var(--line);
+   background: var(--paper);
+   box-shadow: var(--shadow);
+   backdrop-filter: blur(12px);
+}
+
+.rounded-xl.border.bg-white:hover {
+   border-color: rgba(230, 169, 46, 0.45);
+}
+
+input,
+textarea {
+   border-color: var(--line) !important;
+   background: rgba(255, 253, 248, 0.82) !important;
+   color: var(--ink) !important;
+   transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+   color: #9aa5a4;
+}
+
+input:focus,
+textarea:focus {
+   border-color: var(--honey) !important;
+   background: #fffdf8 !important;
+   box-shadow: 0 0 0 4px rgba(245, 185, 66, 0.18) !important;
+}
+
+button,
+a.rounded-full,
+a.rounded-lg {
+   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+button:active,
+a.rounded-full:active,
+a.rounded-lg:active {
+   transform: translateY(1px);
+}
+
+/* Translate the existing Tailwind accent classes into StudyHive colors. */
+.bg-gradient-to-r.from-indigo-500.to-purple-500,
+.bg-gradient-to-br.from-indigo-500.to-purple-500,
+.bg-indigo-600 {
+   background: var(--teal) !important;
+}
+
+.bg-gradient-to-r.from-indigo-500.to-purple-500:hover,
+.bg-indigo-600:hover {
+   background: var(--teal-dark) !important;
+}
+
+.text-indigo-500,
+.text-indigo-600 {
+   color: var(--teal) !important;
+}
+
+.border-indigo-400 {
+   border-color: var(--honey) !important;
+}
+
+.focus\:ring-indigo-100:focus {
+   --tw-ring-color: rgba(245, 185, 66, 0.2) !important;
+}
+
+.bg-gradient-to-r.from-indigo-500.to-purple-500.bg-clip-text {
+   background: linear-gradient(100deg, var(--teal-dark), var(--honey)) !important;
+   -webkit-background-clip: text !important;
+   background-clip: text !important;
+   color: transparent !important;
+}
+
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-4,
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-6 {
+   box-shadow: 0 10px 18px rgba(37, 131, 109, 0.2);
+}
+
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-4:hover,
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-6:hover {
+   box-shadow: 0 14px 24px rgba(37, 131, 109, 0.28);
+   opacity: 1;
+   transform: translateY(-2px);
+}
+
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-6 + a {
+   border-color: rgba(35, 52, 58, 0.18);
+   background: rgba(255, 253, 248, 0.72);
+}
+
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-6 + a:hover {
+   background: var(--honey-light);
+}
+
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-4.py-2,
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-6.py-3 {
+   color: #fffdf8;
+}
+
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-4.py-2:hover,
+.bg-gradient-to-r.from-indigo-500.to-purple-500.px-6.py-3:hover {
+   opacity: 1;
+}
+
+.about-page {
+   overflow: hidden;
+}
+
+.about-kicker {
+   color: var(--teal);
+   font-size: 0.72rem;
+   font-weight: 700;
+   letter-spacing: 0.14em;
+   text-transform: uppercase;
+}
+
+.about-image-frame {
+   position: relative;
+   min-height: 22rem;
+   overflow: hidden;
+   border-radius: 1.5rem 1.5rem 1.5rem 0.35rem;
+   box-shadow: 18px 18px 0 var(--honey-light), var(--shadow);
+}
+
+.about-image-frame img,
+.about-secondary-image img {
+   display: block;
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+
+.about-image-frame img {
+   min-height: 22rem;
+}
+
+.about-image-note {
+   position: absolute;
+   bottom: 1rem;
+   left: 1rem;
+   display: flex;
+   flex-direction: column;
+   gap: 0.18rem;
+   border-radius: 0.8rem;
+   background: rgba(35, 52, 58, 0.92);
+   padding: 0.8rem 1rem;
+   color: #fffdf8;
+   box-shadow: 0 8px 20px rgba(35, 52, 58, 0.2);
+}
+
+.about-image-note strong {
+   font-family: "Space Grotesk", sans-serif;
+}
+
+.about-image-note span {
+   color: #cde7dc;
+   font-size: 0.75rem;
+}
+
+.about-secondary-image {
+   height: 23rem;
+   box-shadow: 12px 12px 0 rgba(245, 185, 66, 0.24);
+}
+
+.about-secondary-image img {
+   transition: transform 500ms ease;
+}
+
+.about-secondary-image:hover img {
+   transform: scale(1.04);
+}
+
+.about-feature {
+   border-color: var(--line);
+   box-shadow: var(--shadow);
+   transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.about-feature:hover {
+   border-color: rgba(230, 169, 46, 0.5);
+   box-shadow: 0 20px 42px rgba(45, 57, 48, 0.12);
+   transform: translateY(-4px);
+}
+
+.about-number {
+   color: var(--honey);
+   font-family: "Space Grotesk", sans-serif;
+   font-size: 0.82rem;
+   font-weight: 700;
+   letter-spacing: 0.12em;
+}
+
+.about-quote {
+   background: var(--teal-dark);
+   box-shadow: 12px 12px 0 var(--honey-light);
+}
+
+/* Home page gets a little editorial structure without changing its JSX. */
+.mx-auto.max-w-5xl.px-4.py-16.text-center,
+.mx-auto.max-w-5xl.px-4.py-24.text-center {
+   position: relative;
+}
+
+.mx-auto.max-w-5xl.px-4.py-16.text-center h1,
+.mx-auto.max-w-5xl.px-4.py-24.text-center h1 {
+   color: var(--ink);
+   font-size: clamp(2.3rem, 6vw, 4.7rem);
+   line-height: 0.98;
+}
+
+@keyframes reveal {
+   from { opacity: 0; transform: translateY(8px); }
+   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+   header nav {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.7rem;
+      padding-bottom: 0.9rem;
+   }
+
+   header nav > div {
+      flex-wrap: wrap;
+      width: 100%;
+   }
+
+   header nav > div a,
+   header nav > div button {
+      padding-left: 0.65rem;
+      padding-right: 0.65rem;
+   }
+}
